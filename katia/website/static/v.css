@@ -1,0 +1,38 @@
+html { 
+    background-color: #3d7cd1;
+  }
+
+header{
+    height: 300px;
+  background: url(bg.png) no-repeat; 
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    -o-background-size: 100% auto;
+    background-size: 100% auto;
+}
+
+section{
+    display: flex;
+    flex-direction: row;
+}
+
+nav{
+    display: flex;
+    flex:1;
+    margin: 0 10px;
+    margin-left: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.main{
+    display: flex;
+    flex:3;
+    margin: 0 10px;
+    margin-right: 0;
+}
+
+footer{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
