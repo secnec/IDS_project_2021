@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='polui.css')}}">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Data Science Project</title>
+        <meta http-equiv="refresh" content="300">
+    </head>
+
+    <body>
+        <header>
+
+        </header>
+
+        <section>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('presentation') }}">Presentation of the project</a></li>
+                    <li><a href="{{ url_for('project') }}">The Project</a></li>
+                </ul>
+            </nav>
+            <div class = main>
+                <h1>Home</h1>
+                <div class="row justify-content-md-center mb-4">
+                    <h3 class='text-primary'>Our model predicts that the following stations will be empty</h3>
+                </div>
+                <table>
+                    {% for row in prediction %}
+                    <tr>
+                        {% for element in row %}
+                            <th>{{ element }}</thi>th>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </section>
+
+        <footer>
+            <p>footer</p>
+
+        </footer>
+    </body>
+
+    
+</html>
