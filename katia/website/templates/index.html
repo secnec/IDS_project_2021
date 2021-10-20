@@ -22,13 +22,23 @@
             <nav>
                 <ul>
                     <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('project') }}">See in details</a></li>
                     <li><a href="{{ url_for('presentation') }}">Presentation of the project</a></li>
-                    <li><a href="{{ url_for('project') }}">The Project</a></li>
                 </ul>
             </nav>
             <div class = main>
                 <h1>Home</h1>
-                <p>blabla</p>
+                <p>blabla</p><br><br>
+
+                <form action="{{ url_for('index') }}">
+                    <label for="station">Which station do you want to see :</label><br>
+                    <select id="station" name="station">
+                        {% for key,value in stations.iterrows() %}
+                            <option value ='{{ key }}' >{{ value['name'] }}</option>
+                        {% endfor %}
+                    </select><br>
+                    <input type="submit"><br><br>
+                  </form>
 
                 <table class = center>
                     <tr> 
@@ -36,6 +46,7 @@
                         <th>Number of available spaces</th>
                         <th>Staion id</th>
                         <th>Date & Time</th>
+                        <th>Station name</th>
                     </tr>
                     {% for key,value in predictions.iterrows() %}
                     <tr>
