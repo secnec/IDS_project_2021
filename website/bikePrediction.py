@@ -44,6 +44,7 @@ def get_weather(time):
     return 0.0, 69.0, 0.0, 14.5, 4.9
 
 def predict_balancing():
+
     arrival_model = joblib.load(open("models/arrival-model.joblib","rb"))
     departure_model = joblib.load(open("models/departure-model.joblib","rb"))
     station_status = get_current_station_status()
@@ -62,4 +63,5 @@ def predict_balancing():
             bikes = bikes + arrival_model.predict(data) - departure_model.predict(data)
             if(bikes <= 0):
                 need_balancing.append([i['name'],human_readable])
+                break
     return need_balancing
