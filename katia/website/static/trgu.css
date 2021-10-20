@@ -23,6 +23,7 @@ nav{
     margin-left: 0;
     background-color: rgba(0, 0, 0, 0.2);
     color: white;
+    height: 10%;
 }
 
 nav ul {
@@ -56,4 +57,22 @@ nav li a:hover {
 footer{
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
+}
+
+table {
+    text-align: center;
+    width:100%
+  }
+  tr:nth-child(even) {
+    background-color: #f0e49b;
+  }
+  tr:nth-child(odd) {
+    background-color: #c7e4f1;
+  }
+  th{
+      border-bottom: 1px solid black;
+  }
+  
+  tr:hover {
+      background-color: #fcb91b;
 }

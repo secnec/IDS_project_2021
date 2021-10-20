@@ -2,10 +2,15 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='polui.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='trgu.css')}}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Data Science Project</title>
         <meta http-equiv="refresh" content="300">
+        <script type="text/javascript">
+            setTimeout(function () { 
+              location.reload();
+            }, 60*5 * 1000);
+        </script>
     </head>
 
     <body>
@@ -24,6 +29,22 @@
             <div class = main>
                 <h1>Home</h1>
                 <p>blabla</p>
+
+                <table class = center>
+                    <tr> 
+                        <th>Number of available bikes</th>
+                        <th>Number of available spaces</th>
+                        <th>Staion id</th>
+                        <th>Date & Time</th>
+                    </tr>
+                    {% for key,value in predictions.iterrows() %}
+                    <tr>
+                        {% for element in value %}
+                            <td>{{ element }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </table>
             </div>
 
         </section>
